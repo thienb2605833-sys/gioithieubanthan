@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Huỳnh Quốc Thiện – Sinh viên Trí Tuệ Nhân Tạo</title>
+<meta name="description" content="Trang giới thiệu bản thân của Huỳnh Quốc Thiện, sinh viên ngành Trí Tuệ Nhân Tạo, Trường Đại học Cần Thơ.">
+<meta name="theme-color" content="#3d5afe">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎮%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f7fb; --card:#ffffff; --ink:#1b2340; --muted:#5d6580;
+  --blue:#3d5afe; --coral:#ff6b57; --mint:#dff3ea; --line:#e3e6f0;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0f1426; --card:#171e36; --ink:#eef0fa; --muted:#a3abc7; --line:#283050; --mint:#17352d; --blue:#8c9eff}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{font-family:"Be Vietnam Pro",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+h1,h2,h3{font-family:"Bricolage Grotesque","Be Vietnam Pro",sans-serif;line-height:1.15}
+a{color:var(--blue)}
+a:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--blue);color:#fff;padding:8px 14px;border-radius:8px;z-index:9}
+.skip:focus{left:8px}
+
+.wrap{max-width:1080px;margin:0 auto;padding:32px 20px 64px;display:grid;grid-template-columns:300px 1fr;gap:32px;align-items:start}
+
+/* Cột thông tin cá nhân */
+aside{position:sticky;top:24px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 24px}
+.avatar{width:112px;height:112px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;
+  font:800 40px "Bricolage Grotesque",sans-serif;margin-bottom:18px;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+aside h1{font-size:28px;font-weight:800}
+.role{color:var(--muted);margin:4px 0 20px}
+.facts{list-style:none;padding:18px 0 0;display:grid;gap:14px;border-top:1px solid var(--line)}
+.facts b{display:block;font-size:13px;font-weight:500;color:var(--muted)}
+.facts span{font-weight:500;overflow-wrap:anywhere}
+
+/* Phần mở đầu */
+.hero{padding:8px 0 24px;animation:rise .7s ease-out both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero h2{font-size:clamp(34px,5.4vw,56px);font-weight:800;max-width:15ch}
+.hero p{margin-top:16px;max-width:60ch;color:var(--muted);font-size:18px}
+.hero mark{background:var(--mint);color:inherit;padding:0 6px;border-radius:6px}
+nav ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+nav a{display:inline-block;padding:6px 14px;border:1px solid var(--line);border-radius:99px;background:var(--card);color:var(--ink);text-decoration:none;font-size:15px;font-weight:500}
+nav a:hover{border-color:var(--blue);color:var(--blue)}
+
+section{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;margin-bottom:20px}
+section h3{font-size:24px;margin-bottom:16px}
+
+/* Quá trình học: chuỗi theo thời gian nên dùng dòng thời gian */
+.timeline{list-style:none;padding:0 0 0 22px;border-left:2px solid var(--line);display:grid;gap:22px}
+.timeline li{position:relative}
+.timeline li::before{content:"";position:absolute;left:-29px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--blue);border:3px solid var(--card)}
+.timeline time{font-size:14px;color:var(--muted)}
+.timeline h4{font-size:17px;font-weight:600}
+
+/* Mục thông tin dạng danh sách */
+.item{padding:14px 0;border-top:1px solid var(--line)}
+.item:first-of-type{border-top:0;padding-top:0}
+.item h4{font-size:17px;font-weight:600}
+.item small{color:var(--muted)}
+.item p{margin-top:4px}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.two section{margin-bottom:0}
+.two+.two,.two+section{margin-top:20px}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0}
+.chips li{padding:8px 16px;border-radius:99px;background:var(--mint);font-weight:500}
+.chips li:nth-child(even){background:color-mix(in srgb,var(--coral) 18%,var(--card))}
+
+footer{text-align:center;color:var(--muted);font-size:14px;padding-top:28px}
+
+@media (max-width:860px){
+  .wrap{grid-template-columns:1fr}
+  aside{position:static}
+}
+@media (max-width:560px){.two{grid-template-columns:1fr}.two section{margin-bottom:0}.two section+section{margin-top:20px}}
+@media (prefers-reduced-motion:reduce){.hero{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#noidung">Chuyển đến nội dung chính</a>
+<div class="wrap">
+
+  <aside>
+    <div class="avatar" role="img" aria-label="Ảnh đại diện của Huỳnh Quốc Thiện">
+      <!-- Muốn dùng ảnh thật: thay chữ HT bằng <img src="anh.jpg" alt="Ảnh của Thiện"> (đặt anh.jpg cùng thư mục) -->
+      HT
+    </div>
+    <h1>Huỳnh Quốc Thiện</h1>
+    <p class="role">Sinh viên Trí Tuệ Nhân Tạo</p>
+    <ul class="facts">
+      <li><b>Họ tên</b><span>Huỳnh Quốc Thiện</span></li>
+      <li><b>Ngày sinh</b><span>17/08/2008</span></li>
+      <li><b>Địa chỉ</b><span>Đồng Tháp, Việt Nam</span></li>
+      <li><b>Email</b><span><a href="mailto:thienb2605833@student.ctu.edu.vn">thienb2605833@student.ctu.edu.vn</a></span></li>
+      <li><b>GitHub</b><span><a href="https://github.com/thienb2605833-sys">github.com/thienb2605833-sys</a></span></li>
+    </ul>
+  </aside>
+
+  <main id="noidung">
+    <div class="hero">
+      <h2>Xin chào, mình là Huỳnh Quốc Thiện</h2>
+      <p>Mình là sinh viên năm nhất ngành Trí Tuệ Nhân Tạo (AI) tại Trường Đại học Cần Thơ. Mình thích <mark>lập trình và làm game</mark>, và muốn tạo ra những sản phẩm có ích cho mọi người. Đây là trang giới thiệu bản thân của mình.</p>
+      <nav aria-label="Mục lục">
+        <ul>
+          <li><a href="#hoc">Quá trình học</a></li>
+          <li><a href="#chuyenmon">Chuyên môn</a></li>
+          <li><a href="#kinhnghiem">Kinh nghiệm</a></li>
+          <li><a href="#sothich">Sở thích</a></li>
+          <li><a href="#thanhtich">Thành tích</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <section id="hoc">
+      <h3>Quá trình học</h3>
+      <ol class="timeline">
+        <li><time>Đến năm 2023</time><h4>Trường THCS Cái Tàu Hạ</h4><p>Đạt Thủ khoa của trường.</p></li>
+        <li><time>2023 – 2026</time><h4>Trường THPT Châu Thành 2</h4><p>Học khối A00, đạt danh hiệu học sinh xuất sắc 3 năm liên tiếp.</p></li>
+        <li><time>2026 – nay</time><h4>Trường Đại học Cần Thơ</h4><p>Sinh viên năm nhất ngành Trí Tuệ Nhân Tạo.</p></li>
+      </ol>
+    </section>
+
+    <section id="chuyenmon">
+      <h3>Lĩnh vực chuyên môn</h3>
+      <div class="item"><h4>Trí tuệ nhân tạo (AI)</h4><p>Đang theo học ngành Trí Tuệ Nhân Tạo, xây dựng nền tảng về lập trình và tư duy giải quyết vấn đề.</p></div>
+      <div class="item"><h4>Lập trình game</h4><p>Lĩnh vực mình yêu thích nhất và mong muốn phát triển lâu dài.</p></div>
+      <div class="item"><h4>Hóa học</h4><p>Học sinh giỏi môn Hóa học, đạt Giải Nhì cấp tỉnh năm 2025.</p></div>
+    </section>
+
+    <section id="kinhnghiem">
+      <h3>Kinh nghiệm</h3>
+      <div class="item"><h4>Xây dựng trang web giới thiệu bản thân</h4><small>Bài thực hành lab07 · Môn Kỹ năng số · 2026</small><p>Thiết kế trang bằng HTML và CSS, đăng lên GitHub Pages; đồng thời tập quản lý công việc cá nhân với Google Keep, Tasks và Calendar.</p></div>
+    </section>
+
+    <div class="two">
+      <section id="sothich">
+        <h3>Sở thích</h3>
+        <ul class="chips">
+          <li>Lập trình</li><li>Làm game</li>
+        </ul>
+      </section>
+
+      <section id="thanhtich">
+        <h3>Thành tích cá nhân</h3>
+        <div class="item"><h4>Giải Nhì kỳ thi học sinh giỏi môn Hóa học</h4><small>Cấp tỉnh · 2025</small></div>
+        <div class="item"><h4>Giải Nhì cuộc thi chọn học sinh giỏi môn Hóa học</h4><small>Cấp trường · 2025</small></div>
+        <div class="item"><h4>Học sinh xuất sắc 3 năm liên tiếp</h4><small>THPT Châu Thành 2 · 2023 – 2026</small></div>
+        <div class="item"><h4>Thủ khoa trường THCS Cái Tàu Hạ</h4><small>2022 – 2023</small></div>
+      </section>
+    </div>
+
+    <footer>© 2026 Huỳnh Quốc Thiện · Làm bằng HTML và CSS, đăng trên GitHub Pages</footer>
+  </main>
+</div>
+</body>
+</html>
